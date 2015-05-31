@@ -1,6 +1,7 @@
 #pragma once
 
 #include <application.hpp>
+#include <context.hpp>
 
 #include <orm/sqlite.hpp>
 
@@ -14,13 +15,10 @@ public:
         mvcpp::database::current_database = new mvcpp::sqlite("data.db"); // start database
 
         // Register all controllers
-        register_controller<home_controller>();
-        register_controller<customer_controller>();
-        register_controller<sales_invoice_controller>();
+        // register_controller<home_controller>();
 
         // Register all models
-        customer::create_tables(true);
-        sales_invoice::create_tables(true);
+        // model_name::create_tables(true);
     }
     virtual void initialize_default_template(mvcpp::context::ptr ctx) override
     {
